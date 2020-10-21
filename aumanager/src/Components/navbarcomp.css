@@ -1,0 +1,19 @@
+#page__nav{
+    background-color: #3aafa9 !important;
+    height: 80px;
+    font-size: large;
+}
+
+.nav__fontcolor{
+    color: #17252A !;
+}
+
+.nav__fontcolor:hover{
+    color: white !important;
+    background-color: #1a403c;
+    border-radius: 5px;
+}
+
+.nav__items{
+    margin-right: 10px !important;
+}

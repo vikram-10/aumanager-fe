@@ -1,0 +1,22 @@
+body{
+    background-position: center;
+    background: url('https://plainbackground.com/download.php?imagename=007f7f.png');
+}
+.page__form{
+    background-color: #dcdcdc;
+    border-radius: 30px;
+    padding: 7%;
+    border: 1px solid black;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+#form__heading{
+    margin-bottom: 5%;
+    text-align: center !important;
+}
+
+#form__line{
+    color: gray;
+    margin-bottom: 20px;
+}

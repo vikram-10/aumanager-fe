@@ -1,0 +1,16 @@
+.page__login{
+    border-radius: 10px;
+    margin-left: 25%;
+    width: 50%;
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    background-color: #dcdcdc;
+}
+
+.login__input{
+    margin-left: 25%;
+    width: 50% !important;
+}
