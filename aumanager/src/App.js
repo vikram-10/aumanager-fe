@@ -7,6 +7,7 @@ import Home from './Pages/Home';
 import Login from './Pages/Login';
 import Signup from './Pages/Signup';
 import Footer from './Components/Footer';
+import Dashboard from './Pages/Dashboard';
 
 
 function App() {
@@ -14,6 +15,9 @@ function App() {
 <div>
 <Navbarcomp/>
 <Switch>
+  <Route path={routes.dashboard}>
+  <Dashboard/>
+  </Route>
   <Route path={routes.login}>
     <Login/>
   </Route>

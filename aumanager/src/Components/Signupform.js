@@ -28,16 +28,30 @@ const Signupform = (props) => {
     "role":role,
     "email":email,
     "pass":pass,
-    "repass":repass
+    "status":"unapproved"
   }
 
   //Write code to send a post request with data to backend (Also check if passwords match)
 
-  console.log(data);
-
-  const submitForm=()=>{
+  const submitForm=async (e)=>{
+    e.preventDefault();
     if(pass===repass){
-      alert("Form submitted for review");
+      let fetcher= await fetch('http://localhost:4000/signup',{
+        method: 'POST',
+        mode: 'cors', 
+        cache: 'no-cache',
+        credentials: 'same-origin',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        redirect: 'follow', 
+        referrerPolicy: 'no-referrer', 
+        body: JSON.stringify(data) 
+      });
+      let fetcherData=await fetcher.json();
+      if(fetcherData.status==1){
+        alert("Form Has Been Submitted for review!");
+      }
     }
     else{
       alert("Passwords do not match");
@@ -49,7 +63,7 @@ const Signupform = (props) => {
   return (
     <Form className="page__form" onSubmit={submitForm}>
         <h1 id="form__heading">Sign Up Form</h1>
-        <p id="form__line">Please note that your form will be sent for review and you can access the website only once it has been approved by the admin</p>
+        <p id="form__line">Please note that your form will be sent for review and you can Login only once it has been approved by the admin</p>
         <div className="row">
             <div className="col-6">
             <FormGroup>
