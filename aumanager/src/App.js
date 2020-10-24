@@ -13,7 +13,6 @@ import Dashboard from './Pages/Dashboard';
 function App() {
   return (
 <div>
-<Navbarcomp/>
 <Switch>
   <Route path={routes.dashboard}>
   <Dashboard/>
@@ -28,7 +27,6 @@ function App() {
      <Home/>
   </Route>
 </Switch>
-<Footer/>
 </div>
   );
 }

@@ -1,6 +1,6 @@
 body{
     background-position: center;
-    background: url('https://plainbackground.com/download.php?imagename=007f7f.png');
+    background: url('https://plainbackground.com/download.php?imagename=007f7f.png') !important;
 }
 .page__form{
     background-color: #dcdcdc;

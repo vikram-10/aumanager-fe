@@ -6,6 +6,8 @@
 }
 
 .nav__fontcolor{
+    margin-left: 5px;
+    padding: 5px;
     color: #17252A !;
 }
 
@@ -13,8 +15,4 @@
     color: white !important;
     background-color: #1a403c;
     border-radius: 5px;
-}
-
-.nav__items{
-    margin-right: 10px !important;
 }

@@ -1,3 +1,4 @@
+// This is the card that is used in the homepage!!
 import React from 'react';
 import {
   Card, CardImg, CardText, CardBody,

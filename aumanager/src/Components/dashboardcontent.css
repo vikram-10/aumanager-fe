@@ -1,0 +1,23 @@
+.dashboard__items{
+    display: flex;
+    align-items: flex-start;
+}
+
+.sidebar{
+    height: 100% !important;
+    box-shadow: 1px 1px 1px 1px black;
+    padding:20px;
+    background-color: grey;
+    z-index: 999;
+    width: 20% !important;
+}
+
+.dashboardContent{
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    background-color: honeydew;
+    margin-left: 10px !important;
+    width: 79%;
+}

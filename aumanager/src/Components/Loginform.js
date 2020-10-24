@@ -1,12 +1,14 @@
 import React,{useState} from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import {Link,BrowserRouter,useHistory,useLocation} from 'react-router-dom';
+import {Link,BrowserRouter,useHistory,useLocation, Redirect} from 'react-router-dom';
 import './loginform.css';
 
 const Loginform = (props) => {
 
+  let history=useHistory();
     const [email,setemail]=useState("");
     const [pass,setpass]=useState("");
+    const [changepage,setchangepage]=useState("");
 
     let data={
         "email":email,
@@ -29,10 +31,17 @@ const Loginform = (props) => {
           });
           let fetcherData=await fetcher.json();
           if(fetcherData.status==1){
-             history.pushState('/dashboard');
+            localStorage.setItem('token',fetcherData.token)
+             setchangepage(1);         //doubtful  //use useState to set status to 1 and check from state and redirect to a protected component use a ternary operator to render the component
+          }
+          else{
+            alert("You have not been approved yet, You will be notified by Mail");
           }
     }
 
+if(changepage==1){
+  history.push('/dashboard');
+}
 
   return (
       <div className="container">
@@ -49,6 +58,7 @@ const Loginform = (props) => {
         <Input className="login__input" type="password" name="password" id="examplePassword" placeholder="Password" onChange={(e)=>{setpass(e.target.value)}} />
       </FormGroup>
       <Button>Submit</Button>
+      <span><Link><p>Forgot Password?</p></Link><Link><p>Sign Up</p></Link></span>
     </Form>
           </div>
       </div>
