@@ -14,6 +14,11 @@ import Sidebar from './Sidebar';
 import Enrollment from './Enrollment';
 import Todolist from './Todolist';
 import Doubtscomponent from './Doubtscomponent';
+import Approval from './Approval';
+import Doubtclearance from './Doubtclearance';
+import Forum from '../Components/Forum';
+import Forumanswer from './Forumanswer';
+import Default from './Default';
 
 export default function Dashboardcontent() {
     const [user, setuser] = useState({});
@@ -62,43 +67,13 @@ export default function Dashboardcontent() {
         "Home":null,
         "Approval":'admin/approval'
     }
-    let facultySidebar=["Home","Assign-Tasks","Forum","Doubts"];
+    let facultySidebar=["Home","Assign-Tasks","Doubt-Clearance","Forum"];
     let facultyRoutes={
         "Home":null,
         "Assign-Tasks":"taskassn",
-        "Forum":"forum",
-        "Doubts":'doubts'
+        "Doubt-Clearance":"doubtclearance",
+        "Forum":"forum"
     }
-
-    // const Sidebar=(props)=>{
-    //        setrole(props.items);
-    //     return(
-    //         <div>
-    //          {role.map((element,index)=>{
-    //              return(
-    //                  <Breadcrumb key={index} className="sidebar__item">
-    //                      <Link to={`${url}/${studentRoutes[element]}`}>{element}</Link>
-    //                  </Breadcrumb>
-    //              )
-    //          })}
-    //         {/* <Breadcrumb className="sidebar__item">
-    //         <Link to={`${url}`}>Home</Link>
-    //       </Breadcrumb>
-    //       <Breadcrumb className="sidebar__item">
-    //        <Link to={`${url}/enrollment`}>Enrollment</Link>
-    //       </Breadcrumb>
-    //             <Breadcrumb className="sidebar__item">
-    //         <Link to={`${url}/todo`}>To Do List</Link>
-    //       </Breadcrumb>
-    //       <Breadcrumb className="sidebar__item">
-    //         <Link to={`${url}/doubts`}>Doubts</Link>
-    //       </Breadcrumb>
-    //       <Breadcrumb className="sidebar__item">
-    //         <Link to={`${url}/forum`}>Forum</Link>
-    //       </Breadcrumb> */}
-    //         </div>
-    //     );
-    // }
 
 
     return (
@@ -110,8 +85,14 @@ export default function Dashboardcontent() {
             </div>
             <div className="dashboardContent">
             <Switch>
+                <Route path={`${path}/forum/:id`}>
+                <Forumanswer/>
+                </Route>
                 <Route path={`${path}/admin/approval`}>
-                <h1>Approval</h1>
+                <Approval/>
+                </Route>
+                <Route path={`${path}/doubtclearance`}>
+                    <Doubtclearance/>
                 </Route>
                 <Route path={`${path}/taskassn`}>
                  <h1>Assign Tasks</h1>
@@ -126,10 +107,10 @@ export default function Dashboardcontent() {
                  <Doubtscomponent/>
                 </Route>
                 <Route path={`${path}/forum`}>
-                 <h1>Forum</h1>
+                 <Forum/>
                 </Route>
                 <Route path={path}>
-                   <h1>Default page</h1>
+                   <Default/>
                 </Route>
             </Switch>
             </div>

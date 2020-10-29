@@ -1,0 +1,33 @@
+.doubtsList{
+    font-size: 40px;
+    margin-left: 10%;
+    margin-bottom: 5%;
+}
+
+.heading{
+    width: 90%;
+  background-color: gray !important;
+}
+
+.sendForm{
+    background-color: #f6d55c;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 37%;
+    width: 25%;
+    border: 1px solid black;
+}
+
+.sendForm:hover{
+    box-shadow: 2px 2px #ed553b;
+}
+
+.doubtItems{
+    font-size: 17px !important;
+    width: 90%;
+    background-color: #ed553b;
+}
+
+.doubtItems:nth-child(2n){
+    background-color: #f6d55c;
+}

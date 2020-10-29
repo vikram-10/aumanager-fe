@@ -1,0 +1,14 @@
+.forumBody{
+    border-radius: 10px;
+    padding: 20px;
+    background-image: url('https://wallpapercave.com/wp/Me0Zt6c.jpg');
+    border-radius: 2px solid black;
+}
+
+.cardBody{
+    width: 100%;
+}
+
+.likeIcon{
+    float: right;
+}

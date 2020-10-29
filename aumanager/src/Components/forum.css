@@ -1,0 +1,39 @@
+.forumBody{
+    border-radius: 10px;
+    padding: 20px;
+    background-image: url('https://wallpapercave.com/wp/Me0Zt6c.jpg');
+    border-radius: 2px solid black;
+}
+.cardWidth{
+    margin-left: 30%;
+    width: 40%;
+    margin-bottom: 10px;
+}
+
+.forumInput{
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 25px;
+    height: 50px;
+    width: 90%;
+}
+
+.postButton{
+    margin-top: 5px;
+    margin-left: -45px;
+    position: absolute;
+    border-radius: 30px;
+    height: 40px;
+    width: 40px;
+}
+.postButton:hover{
+    border:2px solid gray;
+}
+
+.likeIcon:hover{
+color: indianred;
+}
+
+#emptyForum{
+    color: white;
+}
