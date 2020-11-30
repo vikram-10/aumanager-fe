@@ -1,5 +1,6 @@
 import React from 'react';
 import { UncontrolledCarousel } from 'reactstrap';
+import './imageslider.css';
 
 const items = [
   {
@@ -25,6 +26,6 @@ const items = [
   }
 ];
 
-const Imageslider = () => <UncontrolledCarousel items={items} />;
+const Imageslider = () => <UncontrolledCarousel className="img-fluid" items={items} />;
 
 export default Imageslider;

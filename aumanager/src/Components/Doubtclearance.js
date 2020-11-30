@@ -49,6 +49,7 @@ const clearDoubt=async(index,id)=>{
           });
           let fetcherData=await fetcher.json();
           setfields(fetcherData);
+          console.log(fetcherData);
     }
     catch(err){
           console.log(err);
@@ -59,8 +60,7 @@ const clearDoubt=async(index,id)=>{
         <div>
             <h1>Doubt Clearance</h1>
             <ul class="list-group">
-                {fields.map((element,index)=>{
-                    
+                {fields==undefined?<h2>No doubts</h2>:fields.map((element,index)=>{
                     return(
                         <Fragment>
                         {element.status=="Pending"?<li key={index} class="list-group-item">{element.from}<br></br>{element.doubtTitle}<br></br>{element.detailedDoubt}<br></br><button className="btn btn-primary" id={`${index}btn`} onClick={()=>clearDoubt(index,`${element._id}`)}>Cleared</button></li>:null}

@@ -1,9 +1,10 @@
-import React, { useEffect,useState } from 'react'
+import React, { useEffect,useState,useRef } from 'react'
 import './forumanswer.css';
 import {useParams,Link} from 'react-router-dom';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
 export default function Forumanswer() {
+    const likeButton=useRef(null);
     const[item,setitem]=useState([]);
     const[ans,setans]=useState([]);
     let {id}=useParams();
@@ -60,6 +61,10 @@ export default function Forumanswer() {
                console.log(err);
            }
     }
+
+    const pressLike=()=>{
+        likeButton.current.classList.add('liked');
+    }
     return (
         <div>
             <div className="forumBody">
@@ -73,7 +78,7 @@ export default function Forumanswer() {
   <ul class="list-group list-group-flush">
       {element.answers==undefined?<p>No answers yet! (Be the first 😉)</p>:element.answers.map((answer,ind)=>{
           return(
-<li class="list-group-item"><b>{answer.name} &nbsp;</b>({answer.email}):&nbsp; "<span>{answer.anscontent}</span>" <FavoriteIcon className="likeIcon"/></li>
+<li class="list-group-item"><b>{answer.name} &nbsp;</b>({answer.email}):&nbsp; "<span>{answer.anscontent}</span>" <FavoriteIcon onClick={pressLike} ref={likeButton} className="likeIcon"/></li>
           )
       })}
   </ul>

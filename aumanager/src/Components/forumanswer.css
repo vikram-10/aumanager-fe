@@ -12,3 +12,8 @@
 .likeIcon{
     float: right;
 }
+
+.liked{
+    color: indianred;
+}
+    
